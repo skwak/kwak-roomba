@@ -21,7 +21,7 @@ class MyBot < Ebooks::Bot
   def on_startup
     model = Ebooks::Model.load("model/kwakstop.model")
     scheduler.every '10s' do
-      model.make_statement(140)
+      tweet(model.make_statement(140))
       # Tweet something every 24 hours
       # See https://github.com/jmettraux/rufus-scheduler
       # tweet("hi")
